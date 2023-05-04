@@ -4,11 +4,6 @@ from PIL import Image
 from utils import load_url, setup_logger, load_css
 import base64
 from io import BytesIO
-#from grid_api.grid import Grid
-
-# Set up logger
-log_file = './logs/website.log'
-logger = setup_logger(name="website", log_file=log_file)
 
 # Basic configurations
 st.set_page_config(page_title="Carlota's Website", page_icon="👾", layout="wide")
@@ -17,9 +12,9 @@ st.set_page_config(page_title="Carlota's Website", page_icon="👾", layout="wid
 lottie_coding_gif = "https://assets6.lottiefiles.com/packages/lf20_w51pcehl.json"
 lottie_news_gif = "https://assets1.lottiefiles.com/packages/lf20_inviljje.json"
 lottie_ml_gif = "https://assets2.lottiefiles.com/private_files/lf30_8npirptd.json"
-coding_gif = load_url(lottie_coding_gif, logger=logger)
-news_gif = load_url(lottie_news_gif, logger=logger)
-ml_gif = load_url(lottie_ml_gif, logger=logger)
+coding_gif = load_url(lottie_coding_gif)
+news_gif = load_url(lottie_news_gif)
+ml_gif = load_url(lottie_ml_gif)
 
 # load local CSS styling
 load_css('./style/styles.css')
