@@ -4,7 +4,7 @@ from PIL import Image
 from utils import load_url, setup_logger, load_css
 import base64
 from io import BytesIO
-
+#from grid_api.grid import Grid
 
 # Set up logger
 log_file = './logs/website.log'
@@ -15,7 +15,11 @@ st.set_page_config(page_title="Carlota's Website", page_icon="👾", layout="wid
 
 # load Lottie gifs
 lottie_coding_gif = "https://assets6.lottiefiles.com/packages/lf20_w51pcehl.json"
+lottie_news_gif = "https://assets1.lottiefiles.com/packages/lf20_inviljje.json"
+lottie_ml_gif = "https://assets2.lottiefiles.com/private_files/lf30_8npirptd.json"
 coding_gif = load_url(lottie_coding_gif, logger=logger)
+news_gif = load_url(lottie_news_gif, logger=logger)
+ml_gif = load_url(lottie_ml_gif, logger=logger)
 
 # load local CSS styling
 load_css('./style/styles.css')
@@ -46,13 +50,102 @@ with st.container():
             the world of ML & AI and fell in love with it!
 
             I have experience working in several internships as a Data Scientist and right now I am expanding my limits beyond this field
-            to learn more about Computer Science and Software Development! I mainly work with Python, but I amd learning some more languages 
-            (including HTML, CSS, JavaScript and Scala).
+            to learn more about Computer Science and Software Development! I mainly work with Python, but I am learning some more languages 
+            (including JavaScript and Elixir).
             """
         )
     
     with right_column:
         st_lottie(coding_gif, height=400, key="coding_gif")
+
+########## PROJECTS ###########
+
+with st.container():
+    st.write("---")
+    st.title("Projects 🚀")
+    st.write("Here is a list of some of my recent projects. Feel free to look around 👀 ")
+    st.write("")
+
+    with st.container():
+        left_column, right_column = st.columns((1, 1.5), gap="small")
+
+        with left_column:
+            with open("./images/eval_animation.gif", "rb") as frozen_gif:
+                contents = frozen_gif.read()
+                frozen_url = base64.b64encode(contents).decode("utf-8")
+            st.markdown(
+                f'<img class=project-image src="data:image/gif;base64,{frozen_url}" alt="frozen lake gif">',
+                unsafe_allow_html=True,
+            )
+
+        with right_column:
+            st.subheader("Frozen lake ❄️")
+            st.markdown(
+                """
+                Frozen lake is a simple game in which you have to get from the start point to the goal without falling
+                into any of the holes in the way. Well, it may seem easy for a human... but how would a machine do it?
+                In this project I used Reinforcement Learning (specifically, a technique called *Q-learning*) to train 
+                an agent to learn to play frozen lake game, using an OpenAI gymnasium environment. In addition, I tweeked
+                the reward scheme so that the agent learnt the *best* (i.e.: shortest) possible path.
+                Link to the project: https://github.com/carlota-moh/frozen-lake
+                """, unsafe_allow_html=True
+            )
+
+    st.write("")
+    st.write("---")
+    st.write("")
+
+    with st.container(): 
+        left_column, right_column = st.columns((1, 1.5), gap="small")
+        with left_column:
+            st_lottie(news_gif, height=400, key="news_gif")
+
+        with right_column:
+            st.subheader("Hacker News Crawler 👾📃")
+            st.markdown(
+                """
+                [Hacker news](https://news.ycombinator.com/) is a website portal where tech-related news are updated
+                daily. Although the website seems simple at first hand, working with it can become tricky, since the entries 
+                change daily and do not always follow a uniform structure, as some of them may be lacking some fields.
+
+                In this project, I scraped, parsed and cleaned content from the website using Python libraries such as `requests` and `BeatifulSoup4`,
+                organizing the code using OOP principles and ensuring a clean and organized Git log. 
+                 
+                The project is still under development, and I plan to introduce automatic testing using `pytest`, 
+                as well as building an small backend for storing information using `django`. In addition, I would like to build
+                a small front-end application to test my recently acquired knowledge of HTML, CSS and JavaScript so stay tuned
+                for that!
+
+                Link to the project: https://github.com/carlota-moh/hacker-news-crawler
+                """, unsafe_allow_html=True
+            )
+
+    st.write("---")
+
+    with st.container(): 
+        left_column, right_column = st.columns((1, 1.5), gap="small")
+        with left_column:
+            st_lottie(ml_gif, height=400, key="ml_gif")
+
+        with right_column:
+            st.subheader("Ensemble Learning 🤖")
+            st.markdown(
+                """
+                In this project, some colleges and I collaborated to implement advanced Machine Learning for solving
+                a real world problem: predicting whether a day will be holiday or not based on daily energy demand data.
+                In order to do this we conducted a torough comparison of different Ensemble-learning algorithms, including
+                Random Forest, Bagging, Gradient Boosting and Stacking.
+
+                I was in charge of implementing Bayesian Optimization for hyperparameter optimization, as well as fine-tuning
+                a gradient boosting algorithm using `LGBM` and implementing stacking techniques for combining it with other
+                tree based algorithms, which achieved the best performances among the essayed models.
+
+                Link to the project: https://github.com/carlota-moh/ml2-ensemble
+                """, unsafe_allow_html=True
+            )
+    
+
+######### LINKS ############
 
 with st.container():
     st.title("Links 🌟")
