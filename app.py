@@ -30,7 +30,12 @@ with st.container():
     with info_column:
         st.title("Hi! I'm Carlota 😊")
         st.header("Big Data, Technology & Advanced Analytics MSc Student")
-        st.write("I'm an independent, self-driven MSc student with an insatiable appetite for technology and learning new things!")
+        st.write("""
+                 I'm an independent, self-driven MSc student with an insatiable appetite for technology and learning new things!
+                 I love coffee, cats, playing bass and learning Japanese.
+                 """)
+        st.subheader("Links 🌟")
+        st.write("[GitHub](https://github.com/carlota-moh) [LinkedIn](linkedin.com/in/carlota-monedero-50a5941b0)")
 
     with image_column:
         with open("./images/me.jpg", "rb") as f:
@@ -42,21 +47,31 @@ with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header("About me 🙋")
-        st.write(
+        st.title("About me 🙋")
+        st.markdown(
             """
             Hi! Thanks for dropping by! My name is Carlota and I am a currently studying a Master's degree in Big Data & Advanced
-            Analytics in Madrid (Spain). I originally graduated from a BSc in Biotechnology, but during my final thesis I discovered
-            the world of ML & AI and fell in love with it!
+            Analytics in Madrid (Spain). My background includes a degree in Biotechnology that I achieved with an average grade of 9.58/10, 
+            but during my final thesis I discovered the world of ML & AI and fell in love with it! I am currently completing an MSc in Big Data 
+            & Advanced Analytics, which I will be completing in June.
 
-            I have experience working in several internships as a Data Scientist and right now I am expanding my limits beyond this field
-            to learn more about Computer Science and Software Development! I mainly work with Python, but I am learning some more languages 
-            (including JavaScript and Elixir).
+            As a Software Engineer, I have several years of previous experience working with Python for various applications including Web Scraping, 
+            Machine Learning, Data Science, and Deep Learning, as well as a deep understanding of distributed system architecture and open-source tools 
+            such as Kafka, ElasticSearch or HDFS. I am comfortable working with Linux-based systems and scripting in bash, as well as some experience 
+            with Docker.
+
+            Though my main field of expertise is Data Science, I am also learning new programming languages that can be applied to a wider range of
+            applications, including:
+
+            + Front-end development: HTML, CSS and JavaScript
+            + Functional programming: Scala and Elixir
+            + Dynamic programming: Python and JavaScript
+
             """
         )
     
     with right_column:
-        st_lottie(coding_gif, height=400, key="coding_gif")
+        st_lottie(coding_gif, height=600, key="coding_gif")
 
 ########## PROJECTS ###########
 
@@ -64,6 +79,7 @@ with st.container():
     st.write("---")
     st.title("Projects 🚀")
     st.write("Here is a list of some of my recent projects. Feel free to look around 👀 ")
+    st.write("")
     st.write("")
 
     with st.container():
@@ -143,14 +159,6 @@ with st.container():
                 Link to the project: https://github.com/carlota-moh/ml2-ensemble
                 """, unsafe_allow_html=True
             )
-    
-
-######### LINKS ############
-
-with st.container():
-    st.title("Links 🌟")
-    st.write("[GitHub](https://github.com/carlota-moh)")
-    st.write("[LinkedIn](linkedin.com/in/carlota-monedero-50a5941b0)")
 
 with st.container():
     st.write("---")

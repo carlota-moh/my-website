@@ -5,6 +5,12 @@
     border-radius: 50%;
 }
 
+.project-image {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+}
+
 input[type=message], input[type=email], input[type=text], textarea {
     width: 100%; /* Full width */
     background: #F7EEFF;
