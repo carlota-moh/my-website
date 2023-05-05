@@ -16,6 +16,3 @@ textColor = '#F7EEFF'
 # Accepted values (serif | sans serif | monospace) 
 # Default: "sans serif"
 font = "sans serif"
-
-[server]
-port = 80
