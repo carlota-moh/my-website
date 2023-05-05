@@ -30,7 +30,7 @@ with st.container():
                  I love coffee, cats, playing bass and learning Japanese.
                  """)
         st.subheader("Links 🌟")
-        st.write("[GitHub](https://github.com/carlota-moh) [LinkedIn](linkedin.com/in/carlota-monedero-50a5941b0)")
+        st.write("[GitHub](https://github.com/carlota-moh) [LinkedIn](https://linkedin.com/in/carlota-monedero-50a5941b0)")
 
     with image_column:
         with open("./images/me.jpg", "rb") as f:
@@ -168,7 +168,7 @@ with st.container():
         """
     left_column, right_column = st.columns(2)
     with left_column:
-        st.title("Contact me 📧")
+        st.title("Contact me! 📧")
         st.markdown(contact_form, unsafe_allow_html=True)
     with right_column:
         st.empty()
