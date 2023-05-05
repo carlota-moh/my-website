@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image   
-from utils import load_url, setup_logger, load_css
+from utils import load_url, load_css
 import base64
 from io import BytesIO
 
