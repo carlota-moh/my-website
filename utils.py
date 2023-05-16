@@ -1,6 +1,7 @@
 import requests
 import streamlit as st
 
+@st.cache_data
 def load_url(url: str) -> dict:
     response = requests.get(url)
     if response.status_code == 200:
@@ -8,6 +9,7 @@ def load_url(url: str) -> dict:
     else:
         return {}
 
+@st.cache_data
 def load_css(style_file: str) -> None:
     """Load CSS styling"""
     with open(style_file, 'r') as f:
