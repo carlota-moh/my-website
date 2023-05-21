@@ -40,16 +40,18 @@ with st.container():
             but during my final thesis I discovered the world of ML & AI and fell in love with it! I am currently completing an MSc in Big Data 
             & Advanced Analytics, which I will be completing in June.
 
-            I am interested in becoming a DevOps. I already have several years of previous experience working with Python for various applications including Web Scraping, 
+            I am most interested in becoming a Software Developer. I already have several years of previous experience working with Python for various applications including Web Scraping, 
             Machine Learning, Data Science, and Deep Learning, as well as a deep understanding of distributed system architecture and open-source tools 
             such as Kafka, ElasticSearch or HDFS. I am comfortable working with Linux-based systems and scripting in bash, as well as some experience 
-            with Docker, which I have successfully incorporated into several academic & personal projects (including this website!)
+            with Docker, which I have successfully incorporated into several academic & personal projects (including this website!).
 
             My next learning goals include:
-
+            
+            + Building small full-stack applications using Python as backend and React as frontend.
+            + Dockerizing my applications and deploying them to the cloud.
             + Learning AWS and getting certified as a Cloud Practitioner.
-            + Getting hands-on experience working with IaC using Terraform.
-            + Working with Jenkins to provide automatic testing and CI/CD.
+            + Getting hands-on experience working with Jenkins to provide automatic testing and CI/CD.
+            + Learning functional programming languages such as Elixir or Haskell.
             + Studying microservices architecture, which I am really curious about.
             """
         )
@@ -67,6 +69,38 @@ with st.container():
     st.write("Here is a list of some of my recent projects. Feel free to look around 👀 ")
     st.write("")
     st.write("")
+
+    with st.container(): 
+        left_column, right_column = st.columns((1, 1.5), gap="small")
+        with left_column:
+            lottie_news_gif = "https://assets1.lottiefiles.com/packages/lf20_inviljje.json"
+            news_gif = load_url(lottie_news_gif)
+            st_lottie(news_gif, height=400, key="news_gif")
+
+        with right_column:
+            st.subheader("Hacker News Crawler 👾📃")
+            st.markdown(
+                """
+                [Hacker news](https://news.ycombinator.com/) is a website portal where tech-related news are updated
+                daily. Although the website seems simple at first hand, working with it can become tricky, since the entries 
+                change daily and do not always follow a uniform structure, as some of them may be lacking some fields.
+
+                In this project, I scraped, parsed and cleaned content from the website using Python libraries such as `requests` and `BeatifulSoup4`,
+                organizing the code using OOP principles and ensuring a clean and organized Git log. Moreover, I included further back-end functionalities,
+                including a database to store the data and a REST API to serve it!
+
+                Specifically, the project includes the following functionalities:
+
+                + Scraping the website and parsing the HTML content.
+                + A dockerized PostgreSQL database for storing the data.
+                + A dockerized FastAPI service for interacting with the back-end.
+                + Unit-tests for ensuring the correct functioning of the code.                
+
+                Link to the project: https://github.com/carlota-moh/hacker-news-crawler
+                """, unsafe_allow_html=True
+            )
+
+    st.write("---")
 
     with st.container(): 
         left_column, right_column = st.columns((1, 1.5), gap="small")
@@ -130,35 +164,6 @@ with st.container():
     st.write("")
     st.write("---")
     st.write("")
-
-    with st.container(): 
-        left_column, right_column = st.columns((1, 1.5), gap="small")
-        with left_column:
-            lottie_news_gif = "https://assets1.lottiefiles.com/packages/lf20_inviljje.json"
-            news_gif = load_url(lottie_news_gif)
-            st_lottie(news_gif, height=400, key="news_gif")
-
-        with right_column:
-            st.subheader("Hacker News Crawler 👾📃")
-            st.markdown(
-                """
-                [Hacker news](https://news.ycombinator.com/) is a website portal where tech-related news are updated
-                daily. Although the website seems simple at first hand, working with it can become tricky, since the entries 
-                change daily and do not always follow a uniform structure, as some of them may be lacking some fields.
-
-                In this project, I scraped, parsed and cleaned content from the website using Python libraries such as `requests` and `BeatifulSoup4`,
-                organizing the code using OOP principles and ensuring a clean and organized Git log. 
-                 
-                The project is still under development, and I plan to introduce automatic testing using `pytest`, 
-                as well as building an small backend for storing information using `django`. In addition, I would like to build
-                a small front-end application to test my recently acquired knowledge of HTML, CSS and JavaScript so stay tuned
-                for that!
-
-                Link to the project: https://github.com/carlota-moh/hacker-news-crawler
-                """, unsafe_allow_html=True
-            )
-
-    st.write("---")
 
     with st.container(): 
         left_column, right_column = st.columns((1, 1.5), gap="small")
